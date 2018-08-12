@@ -4,6 +4,6 @@ namespace Ecom.Infrastructure.Commands
 {
     public interface ICommandExecutor
     {
-        Task BeginExecute<T>(T command) where T : ICommand;
+        Task BeginExecute<T>(T command) where T : class, ICommand;
     }
 }

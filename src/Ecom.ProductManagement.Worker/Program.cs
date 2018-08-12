@@ -1,4 +1,5 @@
 ﻿using System;
+using Ecom.Infrastructure.ServiceBus;
 using Ecom.ProductManagement.Commands;
 using MassTransit;
 
@@ -6,9 +7,11 @@ namespace Ecom.ProductManagement.Worker
 {
     class Program
     {
+        private static IBusControl bus;
+
         static void Main(string[] args)
         {
-            var bus = Bus.Factory.CreateUsingRabbitMq(sbc =>
+            bus = Bus.Factory.CreateUsingRabbitMq(sbc =>
             {
                 var host = sbc.Host(new Uri("rabbitmq://localhost"), h =>
                 {
@@ -18,10 +21,13 @@ namespace Ecom.ProductManagement.Worker
 
                 sbc.ReceiveEndpoint(host, "test_queue", ep =>
                 {
-                    ep.Handler<ICreateProductCommand>(context =>
-                    {
-                        return Console.Out.WriteLineAsync($"Received: {context.Message.Id}");
-                    });
+                    ep.Consumer(() =>
+                        new CreateProductCommandConsumer(
+                            new ProductCommandHandler(
+                                new ProductFactory(),
+                                new ProductRepository(),
+                                new MassTransitEventPublisher(bus))
+                        ));
                 });
             });
 

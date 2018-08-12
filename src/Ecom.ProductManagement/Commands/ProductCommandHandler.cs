@@ -7,7 +7,7 @@ using Ecom.ProductManagement.Repositories;
 
 namespace Ecom.ProductManagement.Commands
 {
-    internal class ProductCommandHandler : ICommandHandler<ICreateProductCommand>
+    public class ProductCommandHandler : ICommandHandler<ICreateProductCommand>
     {
         private readonly IProductFactory factory;
         private readonly IProductRepository repository;
@@ -22,6 +22,7 @@ namespace Ecom.ProductManagement.Commands
             this.repository = productRepository;
             this.eventPublisher = eventPublisher;
         }
+        
         public async Task Handle(ICreateProductCommand command)
         {
             var product = this.factory.Create(command);

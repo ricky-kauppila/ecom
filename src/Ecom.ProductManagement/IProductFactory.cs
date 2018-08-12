@@ -2,7 +2,7 @@ using Ecom.ProductManagement.Commands;
 
 namespace Ecom.ProductManagement
 {
-    internal interface IProductFactory
+    public interface IProductFactory
     {
         Product Create(ICreateProductCommand command);
     }

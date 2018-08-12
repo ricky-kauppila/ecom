@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ecom.ProductManagement\Ecom.ProductManagement.csproj" />
+    <ProjectReference Include="..\Ecom.Infrastructure.ServiceBus\Ecom.Infrastructure.ServiceBus.csproj" />
   </ItemGroup>
 
 </Project>
