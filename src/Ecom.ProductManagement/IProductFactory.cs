@@ -4,6 +4,6 @@ namespace Ecom.ProductManagement
 {
     internal interface IProductFactory
     {
-        Product Create(CreateProductCommand command);
+        Product Create(ICreateProductCommand command);
     }
 }

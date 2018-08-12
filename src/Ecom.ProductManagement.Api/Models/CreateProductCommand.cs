@@ -1,19 +1,17 @@
 using System;
-using Ecom.Infrastructure.Commands;
+using Ecom.ProductManagement.Commands;
 
-namespace Ecom.ProductManagement.Commands
+namespace Ecom.ProductManagement.Api.Controllers
 {
-    public class CreateProductCommand : ICommand
+    internal class CreateProductCommand : ICreateProductCommand
     {
-
         public CreateProductCommand(Guid id, string articleNumber)
         {
             this.Id = id;
             this.ArticleNumber = articleNumber;
-
         }
-        public Guid Id { get; set; }
 
+        public Guid Id { get; }
         public string ArticleNumber { get; }
     }
 }

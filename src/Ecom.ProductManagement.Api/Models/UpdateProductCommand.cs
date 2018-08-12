@@ -3,7 +3,7 @@ using Ecom.Infrastructure.Commands;
 
 namespace Ecom.ProductManagement.Commands
 {
-    public class UpdateProductCommand : ICommand
+    public class UpdateProductCommand : IUpdateProductCommand
     {
         public UpdateProductCommand(Guid id, string articleNumber)
         {
@@ -12,6 +12,7 @@ namespace Ecom.ProductManagement.Commands
         }
 
         public Guid Id { get; }
+
         public string ArticleNumber { get; }
     }
 }
