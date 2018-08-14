@@ -33,7 +33,7 @@ namespace Ecom.ProductManagement.Api.Controllers
 
         public ProductController()
         {
-            this.commandPublisher = new MassTransitEventPublisher(bus);
+            this.commandPublisher = new MassTransitCommandExecutor(bus);
         }
 
         [HttpPost]

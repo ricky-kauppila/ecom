@@ -3,7 +3,7 @@ using Ecom.Infrastructure.Events;
 
 namespace Ecom.ProductManagement.Events
 {
-    public class ProductCreated : IEvent
+    public class ProductCreated : IProductCreated
     {
         public ProductCreated(Guid id)
         {

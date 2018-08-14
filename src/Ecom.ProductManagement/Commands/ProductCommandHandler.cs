@@ -27,7 +27,7 @@ namespace Ecom.ProductManagement.Commands
         {
             var product = this.factory.Create(command);
             await this.repository.Save(product);
-            await this.eventPublisher.Publish(new ProductCreated(product.Id));
+            await this.eventPublisher.Publish<IProductCreated>(new ProductCreated(product.Id));
         }
     }
 }

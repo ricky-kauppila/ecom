@@ -5,24 +5,18 @@ using MassTransit;
 
 namespace Ecom.Infrastructure.ServiceBus
 {
-    public class MassTransitEventPublisher : IEventPublisher, ICommandExecutor
+    public class MassTransitEventPublisher : IEventPublisher
     {
-        private readonly IBusControl bus;
+        private readonly IPublishEndpoint endpoint;
 
-        public MassTransitEventPublisher(IBusControl bus)
+        public MassTransitEventPublisher(IPublishEndpoint endpoint)
         {
-            this.bus = bus;
-        }
-
-        public async Task BeginExecute<T>(T command) where T : class, ICommand
-        {
-            var endpoint = await bus.GetSendEndpoint(new System.Uri("rabbitmq://localhost/ecom-create-product"));
-            await endpoint.Send(message: command);
+            this.endpoint = endpoint;
         }
 
         public async Task Publish<T>(T @event) where T : class, IEvent
         {
-            await bus.Publish(message: @event);
+            await this.endpoint.Publish(message: @event);
         }
     }
 }
