@@ -16,7 +16,8 @@ namespace Ecom.Infrastructure.ServiceBus
 
         public async Task BeginExecute<T>(T command) where T : class, ICommand
         {
-            await bus.Publish(message: command);
+            var endpoint = await bus.GetSendEndpoint(new System.Uri("rabbitmq://localhost/ecom-create-product"));
+            await endpoint.Send(message: command);
         }
 
         public async Task Publish<T>(T @event) where T : class, IEvent

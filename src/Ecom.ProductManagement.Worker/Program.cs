@@ -1,6 +1,7 @@
 ﻿using System;
 using Ecom.Infrastructure.ServiceBus;
 using Ecom.ProductManagement.Commands;
+using Ecom.ProductManagement.Database;
 using MassTransit;
 
 namespace Ecom.ProductManagement.Worker
@@ -19,7 +20,7 @@ namespace Ecom.ProductManagement.Worker
                     h.Password("guest");
                 });
 
-                sbc.ReceiveEndpoint(host, "test_queue", ep =>
+                sbc.ReceiveEndpoint(host, "ecom-create-product", ep =>
                 {
                     ep.Consumer(() =>
                         new CreateProductCommandConsumer(
@@ -33,25 +34,10 @@ namespace Ecom.ProductManagement.Worker
 
             bus.Start();
 
-            bus.Publish(message: new CreateProductCommand(Guid.NewGuid(), "ABC123"));
-
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();
 
             bus.Stop();
-        }
-
-        public class CreateProductCommand : ICreateProductCommand
-        {
-            public CreateProductCommand(Guid id, string articleNumber)
-            {
-                this.Id = id;
-                this.ArticleNumber = articleNumber;
-
-            }
-            public Guid Id { get; }
-
-            public string ArticleNumber { get; }
         }
     }
 }

@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Ecom.ProductManagement\Ecom.ProductManagement.csproj" />
     <ProjectReference Include="..\Ecom.Infrastructure.ServiceBus\Ecom.Infrastructure.ServiceBus.csproj" />
+    <ProjectReference Include="..\Ecom.ProductManagement.Database\Ecom.ProductManagement.Database.csproj" />
   </ItemGroup>
 
 </Project>

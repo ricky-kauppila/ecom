@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.ProductManagement.Work
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.Infrastructure.ServiceBus", "src\Ecom.Infrastructure.ServiceBus\Ecom.Infrastructure.ServiceBus.csproj", "{71E53B27-4F98-4CAD-A6A7-5A99EE368F0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.ProductManagement.Database", "src\Ecom.ProductManagement.Database\Ecom.ProductManagement.Database.csproj", "{2FA7F5B9-3CC0-4689-B948-45C024F30F95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,18 @@ Global
 		{71E53B27-4F98-4CAD-A6A7-5A99EE368F0E}.Release|x64.Build.0 = Release|Any CPU
 		{71E53B27-4F98-4CAD-A6A7-5A99EE368F0E}.Release|x86.ActiveCfg = Release|Any CPU
 		{71E53B27-4F98-4CAD-A6A7-5A99EE368F0E}.Release|x86.Build.0 = Release|Any CPU
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95}.Debug|x64.Build.0 = Debug|Any CPU
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95}.Debug|x86.Build.0 = Debug|Any CPU
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95}.Release|x64.ActiveCfg = Release|Any CPU
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95}.Release|x64.Build.0 = Release|Any CPU
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95}.Release|x86.ActiveCfg = Release|Any CPU
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3F10CAAD-AC66-4939-A0C1-18D72EAAE4DE} = {7839646D-E8C5-4080-949C-0165BD36104D}
@@ -95,5 +109,6 @@ Global
 		{1535D138-50E2-4AFB-9B5A-DBD2F98D18D6} = {7839646D-E8C5-4080-949C-0165BD36104D}
 		{3B1DDDC6-4E39-4303-B6AD-EF3C7F36E6D4} = {7839646D-E8C5-4080-949C-0165BD36104D}
 		{71E53B27-4F98-4CAD-A6A7-5A99EE368F0E} = {7839646D-E8C5-4080-949C-0165BD36104D}
+		{2FA7F5B9-3CC0-4689-B948-45C024F30F95} = {7839646D-E8C5-4080-949C-0165BD36104D}
 	EndGlobalSection
 EndGlobal
